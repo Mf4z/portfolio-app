@@ -35,10 +35,10 @@ const Navbar = () => {
       {/* Menu for mobile screens */}
       <ul className={
         mobileNav ? "absolute top-0 left-0 w-full h-screen justify-center items-center flex flex-col gap-6 bg-primary" : 'hidden'}>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Experience</li>
-        <li>Contact</li>
+        <li className='cursor-pointer'>About</li>
+        <li className='cursor-pointer'>Skills</li>
+        <li className='cursor-pointer'>Experience</li>
+        <li className='cursor-pointer'>Contact</li>
       </ul>
 
       {/* Show my links */}

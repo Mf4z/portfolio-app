@@ -1,6 +1,7 @@
 import React from 'react';
 import Skills from './Skills';
 import { ArrowRightIcon } from '@heroicons/react/16/solid';
+import BaseButton from './BaseButton';
 
 const About = () => {
   return (
@@ -15,10 +16,14 @@ const About = () => {
           I specialize in building web applications. I am currently focusing on
           backend development with Node and using Nestjs
         </p>
-        <div className="group cursor-pointer flex gap-3 item-center justify-center py-2 px-6 mx-auto text-white border-2 bg-primary hover:bg-secondary">
-          <button>View Work</button>
+        {/* <div className="group cursor-pointer flex gap-3 item-center justify-center py-2 px-6 mx-auto text-white border-2 bg-primary hover:bg-secondary">
+          <button className='text-white'>View Work</button>
           <ArrowRightIcon className="text-white w-4 group-hover:rotate-90" />
-        </div>
+        </div> */}
+        <div className="group flex gap"></div>
+        <BaseButton text="View Work">
+          <ArrowRightIcon className="text-white w-6 group-hover:rotate-90 duration-300" />
+        </BaseButton>
       </div>
       <Skills></Skills>
     </div>

@@ -3,15 +3,18 @@ import Work from "./pages/Work";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import Skills from "./pages/Skills";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
     <div>
-      <Navbar></Navbar>
-      <About></About>
-      <Skills></Skills>
-      <Work />
-      <Contact />
+      <ThemeProvider>
+        <Navbar />
+        <About />
+        <Skills />
+        <Work />
+        <Contact />
+      </ThemeProvider>
     </div>
   );
 }

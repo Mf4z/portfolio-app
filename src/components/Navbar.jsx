@@ -10,6 +10,7 @@ import {
   IdentificationIcon,
 } from "@heroicons/react/24/solid";
 import SocialNav from "./SocialNav.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 const navItems = [
   {
@@ -48,22 +49,25 @@ const Navbar = () => {
     <div className="fixed text-white w-full h-[80px] bg-primary flex justify-between items-center px-4">
       {/* Here is my navbar */}
       <div>
-        <p className="text-4x1">{LOGO_NAME}</p>
+        <p className="text-4xl">{LOGO_NAME}</p>
       </div>
 
       {/* Menu for desktop screens ()>= 768px) */}
-      <ul className="hidden md:flex gap-4">
-        <li className="cursor-pointer">About</li>
-        <li className="cursor-pointer">Skills</li>
-        <li className="cursor-pointer">Experience</li>
-        <li className="cursor-pointer">Contact</li>
-      </ul>
+      <div className="flex item-center gap-8">
+        <ThemeToggle></ThemeToggle>
+        <ul className="hidden md:flex gap-4">
+          <li className="cursor-pointer">About</li>
+          <li className="cursor-pointer">Skills</li>
+          <li className="cursor-pointer">Experience</li>
+          <li className="cursor-pointer">Contact</li>
+        </ul>
+      </div>
 
       <div onClick={handleNavClick} className="md:hidden z-10">
         {!mobileNav ? (
-          <Bars3Icon className="z-10 w-6 text-white"></Bars3Icon>
+          <Bars3Icon className="z-10 w-6 text-white" />
         ) : (
-          <XMarkIcon className="z-10 w-6 text-white"></XMarkIcon>
+          <XMarkIcon className="z-10 w-6 text-white" />
         )}
       </div>
       {/* Menu for mobile screens */}
@@ -74,10 +78,10 @@ const Navbar = () => {
             : "hidden"
         }
       >
-        <li className="cursor-pointer">About</li>
-        <li className="cursor-pointer">Skills</li>
-        <li className="cursor-pointer">Experience</li>
-        <li className="cursor-pointer">Contact</li>
+        <li>About</li>
+        <li>Skills</li>
+        <li>Experience</li>
+        <li>Contact</li>
       </ul>
 
       {/* Show my links */}

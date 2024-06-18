@@ -1,8 +1,12 @@
-import React from "react";
-import { StringLiteral } from "typescript";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { IUseTechNewsReturn } from "../types.ts";
 
+const useFetchNews = (): IUseTechNewsReturn => {
+    const [news, setNews] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-const useFetchNews = () => {
     useEffect(() => {
         const fetchNews = async () => {
             try {
@@ -11,7 +15,7 @@ const useFetchNews = () => {
                     {
                         params: {
                             category: "technology",
-                            country: "ng",
+                            country: "us",
                             apiKey: process.env.REACT_APP_NEWS_API_KEY,
                         },
                     }
@@ -26,5 +30,7 @@ const useFetchNews = () => {
         fetchNews();
     }, []);
 
-    return news, loading, error
-}
+    return { news, loading, error };
+};
+
+export default useFetchNews;

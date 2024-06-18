@@ -1,15 +1,10 @@
-import { React, useState, useEffect } from "react";
+import React from "react";
+import useFetchNews from "../hooks/useFetchNews.ts";
 import axios from "axios";
 
 const TechNews = () => {
-  const {news, loading,error}
-  // 
-  const [news, setNews] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
+  const {news, loading,error} = useFetchNews();
   
-
   if (loading) return;
   if (error) return <div>Error fetching data</div>;
 

@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Skills from "./pages/Skills";
 import TechNews from "./pages/TechNews";
 import { ThemeProvider } from "./context/ThemeContext";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Work />
         <Contact />
         <TechNews />
+        <Testimonials />
       </ThemeProvider>
     </div>
   );

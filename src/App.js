@@ -17,7 +17,7 @@ function App() {
         <Work />
         <Contact />
         <TechNews />
-        <Testimonials />
+        {/* <Testimonials /> */}
       </ThemeProvider>
     </div>
   );

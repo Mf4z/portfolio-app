@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Work from "./pages/Work";
 import Navbar from "./components/Navbar";
@@ -9,17 +10,29 @@ import Testimonials from "./pages/Testimonials";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <ThemeProvider>
-        <Navbar />
-        <About />
-        <Skills />
-        <Work />
-        <Contact />
-        <TechNews />
-        {/* <Testimonials /> */}
+        <div>
+          <Routes>
+            <Route
+              index
+              element={
+                <>
+                  <Navbar />
+                  <About />
+                  <Skills />
+                  <Work />
+                  <Contact />
+                </>
+              }
+            ></Route>
+            <Route path="/news" element={<TechNews />}>
+              <TechNews />
+            </Route>
+          </Routes>
+        </div>
       </ThemeProvider>
-    </div>
+    </BrowserRouter>
   );
 }
 

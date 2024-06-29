@@ -11,7 +11,8 @@ import {
 } from "@heroicons/react/24/solid";
 import SocialNav from "./SocialNav.jsx";
 import ThemeToggle from "./ThemeToggle.jsx";
-import { Link } from "react-scroll";
+import { Link as Scrolling } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const navItems = [
   {
@@ -58,24 +59,24 @@ const Navbar = () => {
         <ThemeToggle></ThemeToggle>
         <ul className="hidden md:flex gap-4">
           <li className="cursor-pointer">
-            <Link to="about" smooth={true} duration={500}>
+            <Scrolling to="about" smooth={true} duration={500}>
               About
-            </Link>
+            </Scrolling>
           </li>
           <li className="cursor-pointer">
-            <Link to="skills" smooth={true} duration={500}>
+            <Scrolling to="skills" smooth={true} duration={500}>
               Skills
-            </Link>
+            </Scrolling>
           </li>
           <li className="cursor-pointer">
-            <Link to="work" smooth={true} duration={500}>
+            <Scrolling to="work" smooth={true} duration={500}>
               Experience
-            </Link>
+            </Scrolling>
           </li>
           <li className="cursor-pointer">
-            <Link to="contact" smooth={true} duration={500}>
+            <Scrolling to="contact" smooth={true} duration={500}>
               Contact
-            </Link>
+            </Scrolling>
           </li>
         </ul>
       </div>
